@@ -1,19 +1,19 @@
 import React from 'react';
-import Table from './components/Table';
-import SearchField from './components/SearchField';
-import StarWarsProvider from './context/StarWarsProvider';
-import FiltersProvider from './context/FiltersProvider';
+
+import './App.css';
+import Table from './pages/Table';
+import { FilterByName, FilterByNumber, FilterByOrder, Filters } from './components';
+import { StarWarsProvider } from './context';
 
 function App() {
   return (
-    <main>
-      <FiltersProvider>
-        <StarWarsProvider>
-          <SearchField />
-          <Table />
-        </StarWarsProvider>
-      </FiltersProvider>
-    </main>
+    <StarWarsProvider>
+      <FilterByName />
+      <FilterByNumber />
+      <FilterByOrder />
+      <Filters />
+      <Table />
+    </StarWarsProvider>
   );
 }
 
